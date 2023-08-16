@@ -28,9 +28,8 @@ Route::get('/totalFarm',[FarmController::class , 'getCountOfFarms']);
 Route::get('/totalField',[FieldController::class , 'getCountOfField']);
 
 Route::get('/contacts', [ContactController::class, 'getAllContacts']);
-
 Route::DELETE('/contacts/{id}', [ContactController::class, 'destroy']);
-
+Route::get('/contacts/{contactID}', [ ContactController::class, 'getContactDetail' ]);
 
 Route::post('/login', [ AuthController::class, 'login' ]);
 // Authenticated routes

@@ -13,4 +13,9 @@ class userInfo extends Model
     {
         return $this->belongsTo(User::class, 'userID');
     }
+
+    public function contact()
+{
+    return $this->hasMany(Contact::class , 'userID');
+}
 }
