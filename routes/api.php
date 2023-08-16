@@ -6,6 +6,7 @@ use App\Http\Controllers\FarmController;
 use App\Http\Controllers\FieldController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,6 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+
+Route::get('/users', [UserController::class, 'getAlluser']);
+
+
+
 Route::get('/getfarms',[FarmController::class , 'getFarms']);
 Route::get('/totalFarm',[FarmController::class , 'getCountOfFarms']);
 
@@ -30,8 +36,12 @@ Route::get('/totalField',[FieldController::class , 'getCountOfField']);
 Route::get('/contacts', [ContactController::class, 'getAllContacts']);
 Route::DELETE('/contacts/{id}', [ContactController::class, 'destroy']);
 Route::get('/contacts/{contactID}', [ ContactController::class, 'getContactDetail' ]);
+Route::post('/contacts', [ContactController::class, 'store']);
+Route::put('/contacts/{id}', [ContactController::class, 'updateContact']);
+
 
 Route::post('/login', [ AuthController::class, 'login' ]);
+
 // Authenticated routes
 // Route::middleware('auth:sanctum')->group(function () {
    

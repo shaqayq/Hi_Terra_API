@@ -17,6 +17,7 @@ class contact extends Model
   protected $primaryKey = 'id';
   public $incrementing = false; 
   protected $keyType = 'string';
+  
   protected $casts = [
     'createdAt' => "timestamp",
     'updatedAt' => "timestamp",

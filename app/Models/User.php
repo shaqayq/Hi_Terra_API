@@ -8,11 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\HasApiTokens;
 
-// use App\Traits\Uuids;
+use App\Traits\Uuids;
 
 class user extends Authenticatable implements JWTSubject
 {
-  use Notifiable, HasApiTokens;
+  use Notifiable, HasApiTokens , Uuids;
   // use Notifiable, Uuids;
   use Notifiable;
   public $timestamps = false;
@@ -20,6 +20,11 @@ class user extends Authenticatable implements JWTSubject
   protected $guarded = [];
   protected $hidden = ['password'];
 
+  protected $primaryKey = 'id';
+  public $incrementing = false; 
+  protected $keyType = 'string';
+  
+  
   protected $casts = [
     'createdAt' => "timestamp",
     'updatedAt' => "timestamp",
