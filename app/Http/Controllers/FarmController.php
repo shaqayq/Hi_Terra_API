@@ -12,7 +12,7 @@ class FarmController extends Controller
      */
     public function getFarms()
     {
-        // $farmResults = farm::with('longitude', 'latitude');
+      
         $farmResults = farm::select('farmName','longitude', 'latitude')->get();
         return response()->json([ 'farmsResult'=>$farmResults]);
     }

@@ -31,6 +31,7 @@ Route::get('/users', [UserController::class, 'getAlluser']);
 Route::get('/getfarms',[FarmController::class , 'getFarms']);
 Route::get('/totalFarm',[FarmController::class , 'getCountOfFarms']);
 
+
 Route::get('/totalField',[FieldController::class , 'getCountOfField']);
 
 Route::get('/contacts', [ContactController::class, 'getAllContacts']);

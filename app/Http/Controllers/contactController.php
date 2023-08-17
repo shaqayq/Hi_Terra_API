@@ -33,18 +33,6 @@ class contactController extends Controller
     public function store(Request $request)
     {
       
-        // $validator = Validator::make($request->all(), [
-        //     'user_id' => 'required|integer', 
-        //     'contact_name' => 'required|string',
-        //     'contact_no' => 'required|string',
-        //     'status' => 'required|string',
-            
-        // ]);
-
-        // if ($validator->fails()) {
-        //     return response(['message' => 'Validation failed', 'errors' => $validator->errors()], 422);
-        // }
-        
 
         $contact = new Contact([
             'userID' => $request->userId,
