@@ -23,7 +23,7 @@ class contactController extends Controller
     public function getContactDetail($id){
 
        
-        $contacts = Contact::select('contact.*', 'user_info.email', 'user_info.address', 'user_info.mobileNo' )
+        $contacts = Contact::select('contact.*', 'user_info.email', 'user_info.address', 'user_info.mobileNo', 'user_info.fullName' )
         ->join('user_info', 'contact.userID', '=', 'user_info.userID')
         ->where('contact.id',$id)
         ->first();

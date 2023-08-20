@@ -7,6 +7,8 @@ use App\Http\Controllers\FieldController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\TaskController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -39,6 +41,10 @@ Route::DELETE('/contacts/{id}', [ContactController::class, 'destroy']);
 Route::get('/contacts/{contactID}', [ ContactController::class, 'getContactDetail' ]);
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::put('/contacts/{id}', [ContactController::class, 'updateContact']);
+
+Route::get('/tasks', [TaskController::class, 'getAllTask']);
+
+Route::get('/tasks/{id}', [TaskController::class, 'getTask']);
 
 
 Route::post('/login', [ AuthController::class, 'login' ]);
